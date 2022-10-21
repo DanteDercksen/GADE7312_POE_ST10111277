@@ -9,7 +9,7 @@
 #include "HeightMap.h"
 #include <Windows.h>
 
-
+#include "ChessPiece.h"
 //STB
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
@@ -29,6 +29,9 @@ TexturedCube gObject;
 ChessBoard chessBoard;
 HeightMap heightMap;
 
+ChessPiece chessPiece;
+
+
 void input(int key, int x, int y);
 void init();
 void display();
@@ -44,7 +47,7 @@ int main(int argc, char* argv[]) {
 
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GL_RGB | GLUT_DOUBLE | GLUT_DEPTH);
-	
+
 	//Window initialising
 	{
 		int windowX = (int)(glutGet(GLUT_SCREEN_WIDTH) - WIDTH) / 2;
@@ -61,7 +64,7 @@ int main(int argc, char* argv[]) {
 	glutTimerFunc(0, timer, 0);
 	init();
 	glutMainLoop();
-	
+
 	delete texture;
 
 	return 0;
@@ -73,19 +76,15 @@ void init() {
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	//glOrtho(0, WIDTH, HEIGHT, 0,0,1);
 	gluPerspective(50.0, (double)WIDTH / (double)HEIGHT, 1.0, 1000.0);
-
-	//updateCamera();
 	gluLookAt(
-		0, 30, 50,
+		0, 30 / 4, 50 / 4,
 		0, 0, 0,
 		0, 1, 0
 	);
 
 	glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
 	texture = new Texture("Textures/cloudimage.png");
-	//texture = new Texture("Textures/wolfram.png");
 }
 
 void display() {
@@ -96,18 +95,25 @@ void display() {
 
 	//Display HeightMap
 	{
-	glPushMatrix();
-	heightMap.DrawMap(15, 100, texture);
-	glPopMatrix();
+		glPushMatrix();
+		heightMap.DrawMap(15, 100, texture);
+		glPopMatrix();
 	}
 
 	//Display ChessBoard
 	{
-	glPushMatrix();
-	glTranslatef(0, 0.5f, 0);
-	glRotatef(90, 1, 0, 0);
-	chessBoard.draw();
-	glPopMatrix();
+		glPushMatrix();
+		glTranslatef(0, 0.5f, 0);
+		glRotatef(90, 1, 0, 0);
+		chessBoard.draw();
+		glPopMatrix();
+	}
+
+	//Display Chess Pieces
+	{
+		glPushMatrix();
+		chessPiece.placePieces();
+		glPopMatrix();
 	}
 
 	glutSwapBuffers();
@@ -116,7 +122,7 @@ void display() {
 
 void timer(int) {
 	glutPostRedisplay();
-	glutTimerFunc(1000/60, timer, 0);		//	Comment this if you want to pause
+	glutTimerFunc(1000 / 60, timer, 0);		//	Comment this if you want to pause
 }
 
 void updateCamera() {
@@ -135,7 +141,7 @@ void updateCamera() {
 		}
 		else if (GetKeyState(GLUT_KEY_LEFT) & 0x8000)
 		{
-			
+
 			cout << "A" << endl;
 			isPressed = true;
 			cameraPos++;
@@ -153,7 +159,7 @@ void updateCamera() {
 		if (cameraPos < 0) cameraPos = 2;
 		if (cameraPos == 0)
 		{
-			eyeX = -5; 
+			eyeX = -5;
 		}
 		if (cameraPos == 2)
 		{
@@ -163,7 +169,7 @@ void updateCamera() {
 
 	gluLookAt(
 		0, 0, 5,
-		eyeX,0,0,
+		eyeX, 0, 0,
 		0, 1, 0
 	);
 }

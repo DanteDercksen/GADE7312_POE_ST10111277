@@ -1,5 +1,5 @@
 #pragma once
-struct Pixel 
+struct Pixel
 {
 	float r;
 	float g;

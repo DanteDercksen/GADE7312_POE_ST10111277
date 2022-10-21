@@ -4,10 +4,10 @@
 #include <GL/glut.h>
 
 
-void ChessBoard::drawGeometry() 
+void ChessBoard::drawGeometry()
 {
 	//	Separated for simplicity
-	
+
 	glPushMatrix();
 	glScalef(0.5f, 0.5f, 0.5f);
 	drawTiles();
@@ -108,10 +108,10 @@ void ChessBoard::drawSide() {
 }
 
 void ChessBoard::drawBorder() {
-	
+
 	//side 1
 	glPushMatrix();
-	glRotatef(90,1,0,0);
+	glRotatef(90, 1, 0, 0);
 	glTranslatef(-6, 0, 1);
 	drawSide();
 	glPopMatrix();
@@ -165,12 +165,12 @@ void ChessBoard::drawCube(bool isBlack, int x, int y, float offset) {
 	{
 		glPushMatrix();
 		int i = 0;
-		
+
 
 		if (isBlack)
-			glColor3f(0,0,0);
+			glColor3f(0, 0, 0);
 		else
-			glColor3f(1,1,1);
+			glColor3f(1, 1, 1);
 
 
 		//vertices altered to create a cube in a new position
@@ -216,8 +216,8 @@ void ChessBoard::drawCube(bool isBlack, int x, int y, float offset) {
 }
 
 void ChessBoard::drawBoard() {
-    drawGeometry();
-    glDisable(GL_DEPTH_TEST);
+	drawGeometry();
+	glDisable(GL_DEPTH_TEST);
 }
 
 void ChessBoard::SetRandom() {

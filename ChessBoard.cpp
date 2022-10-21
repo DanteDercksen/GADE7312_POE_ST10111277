@@ -58,8 +58,6 @@ void ChessBoard::drawTiles() {
 
 void ChessBoard::drawSide() {
 
-	//i like waffles (with syrup)
-
 	glBegin(GL_QUADS);
 	{
 		glPushMatrix();

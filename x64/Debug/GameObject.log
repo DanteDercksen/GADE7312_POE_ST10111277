@@ -1,5 +1,93 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (GameObject.vcxproj, WindowCreation.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  ChessBoard.cpp
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\ChessBoard.cpp(229,14): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  ChessPiece.cpp
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\ChessPiece.cpp(31,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\ChessPiece.cpp(32,31): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\ChessPiece.cpp(66,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\ChessPiece.cpp(67,31): warning C4305: 'argument': truncation from 'double' to 'float'
+  GameObject.cpp
+  HeightMap.cpp
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\HeightMap.cpp(11,37): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\HeightMap.cpp(11,21): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  King.cpp
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\King.cpp(93,44): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\King.cpp(93,31): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\King.cpp(93,18): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\King.cpp(166,17): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\King.cpp(172,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\King.cpp(173,17): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\King.cpp(179,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\King.cpp(180,17): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\King.cpp(186,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\King.cpp(187,17): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\King.cpp(196,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\King.cpp(197,17): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\King.cpp(203,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\King.cpp(204,17): warning C4305: 'argument': truncation from 'double' to 'float'
+  Knight.cpp
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Knight.cpp(18,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Knight.cpp(22,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Knight.cpp(31,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Knight.cpp(35,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
   Main.cpp
+  Pawn.cpp
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Pawn.cpp(88,35): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Pawn.cpp(88,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Pawn.cpp(88,19): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Pawn.cpp(89,45): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Pawn.cpp(89,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Pawn.cpp(89,23): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Pawn.cpp(90,35): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Pawn.cpp(90,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Pawn.cpp(90,19): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Pawn.cpp(91,45): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Pawn.cpp(91,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Pawn.cpp(91,23): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  Bishop.cpp
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Bishop.cpp(94,44): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Bishop.cpp(94,31): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Bishop.cpp(94,18): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Bishop.cpp(186,35): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Bishop.cpp(186,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Bishop.cpp(186,19): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Bishop.cpp(187,45): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Bishop.cpp(187,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Bishop.cpp(187,23): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Bishop.cpp(188,35): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Bishop.cpp(188,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Bishop.cpp(188,19): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Bishop.cpp(189,45): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Bishop.cpp(189,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Bishop.cpp(189,23): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  Queen.cpp
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(94,44): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(94,31): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(94,18): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(186,35): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(186,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(186,19): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(187,45): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(187,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(187,23): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(188,35): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(188,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(188,19): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(189,45): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(189,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(189,23): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(201,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(202,15): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(203,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(205,30): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Queen.cpp(207,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  Rook.cpp
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Rook.cpp(88,44): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Rook.cpp(88,31): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Rook.cpp(88,18): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ruan\source\repos\GADE7312_POE_ST10111277\Rook.cpp(159,15): warning C4305: 'argument': truncation from 'double' to 'float'
+  Texture.cpp
+  Generating Code...
 GameObject.obj : error LNK2019: unresolved external symbol __imp_glutSolidCube referenced in function "private: virtual void __cdecl GameObject::drawGeometry(void)" (?drawGeometry@GameObject@@EEAAXXZ)
 GameObject.obj : error LNK2019: unresolved external symbol __imp_glutSolidCone referenced in function "private: void __cdecl GameObject::drawOrigin(void)" (?drawOrigin@GameObject@@AEAAXXZ)
 Main.obj : error LNK2019: unresolved external symbol __imp_glutInitWindowPosition referenced in function main

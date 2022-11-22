@@ -8,6 +8,7 @@
 #include "ChessBoard.h"
 #include "HeightMap.h"
 #include <Windows.h>
+#include "pch.h"
 
 #include "ChessPiece.h"
 //STB
@@ -18,7 +19,10 @@
 #define RIGHT_ARROW 77
 
 using namespace std;
+using namespace DirectX;
+using namespace DirectX::SimpleMath;
 
+using Microsoft::WRL::ComPtr;
 
 static const int WIDTH = 800;
 static const int HEIGHT = 600;

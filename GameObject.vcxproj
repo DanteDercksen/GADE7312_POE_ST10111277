@@ -142,6 +142,7 @@
   <ItemGroup>
     <ClCompile Include="ChessBoard.cpp" />
     <ClCompile Include="ChessPiece.cpp" />
+    <ClCompile Include="FpsCounter.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="HeightMap.cpp" />
     <ClCompile Include="King.cpp" />
@@ -152,6 +153,7 @@
     <ClCompile Include="Pixel.cpp" />
     <ClCompile Include="Queen.cpp" />
     <ClCompile Include="Rook.cpp" />
+    <ClCompile Include="SkyboxEffect.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TexturedCube.cpp" />
   </ItemGroup>
@@ -164,13 +166,50 @@
     <ClInclude Include="King.h" />
     <ClInclude Include="Knight.h" />
     <ClInclude Include="Pawn.h" />
+    <ClInclude Include="pch.h" />
     <ClInclude Include="Pixel.h" />
     <ClInclude Include="Queen.h" />
+    <ClInclude Include="ReadData.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Rook.h" />
+    <ClInclude Include="SkyboxEffect.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TexturedCube.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="SkyboxCommon.hlsli" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="SkyboxPS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="SkyboxVS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GADE7312_POE_ST10111277.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\Microsoft.XAudio2.Redist.1.2.9\build\native\Microsoft.XAudio2.Redist.targets" Condition="Exists('packages\Microsoft.XAudio2.Redist.1.2.9\build\native\Microsoft.XAudio2.Redist.targets')" />
+    <Import Project="packages\directxtk_desktop_2019.2022.10.18.2\build\native\directxtk_desktop_2019.targets" Condition="Exists('packages\directxtk_desktop_2019.2022.10.18.2\build\native\directxtk_desktop_2019.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.XAudio2.Redist.1.2.9\build\native\Microsoft.XAudio2.Redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.XAudio2.Redist.1.2.9\build\native\Microsoft.XAudio2.Redist.targets'))" />
+    <Error Condition="!Exists('packages\directxtk_desktop_2019.2022.10.18.2\build\native\directxtk_desktop_2019.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\directxtk_desktop_2019.2022.10.18.2\build\native\directxtk_desktop_2019.targets'))" />
+  </Target>
 </Project>

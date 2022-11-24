@@ -9,6 +9,10 @@
 
 using namespace std;
 
+/// -------------------------------
+/// Loading the cubemap as a skybox
+/// -------------------------------
+
 unsigned int loadCubemap(vector<std::string> faces)
 {
     unsigned int textureID;
@@ -44,16 +48,24 @@ unsigned int loadCubemap(vector<std::string> faces)
     return textureID;
 }
 
+/// -----------------------------------------------------------------------------
+/// Loading texture paths in a vector in the order specified by the cubemap enums
+/// -----------------------------------------------------------------------------
+
 vector<std::string> faces
 {
-    "right.jpg",
-    "left.jpg",
-    "top.jpg",
-    "bottom.jpg",
-    "front.jpg",
-    "back.jpg"
+    "Textures/right.jpg",
+    "Textures/left.jpg",
+    "Textures/top.jpg",
+    "Textures/bottom.jpg",
+    "Textures/front.jpg",
+    "Textures/back.jpg"
 };
 unsigned int cubemapTexture = loadCubemap(faces);
+
+/// -------------------------
+/// Skybox vertices positions
+/// -------------------------
 
 float skyboxVertices[] = {        
     -1.0f,  1.0f, -1.0f,
@@ -98,6 +110,10 @@ float skyboxVertices[] = {
     -1.0f, -1.0f,  1.0f,
      1.0f, -1.0f,  1.0f
 };
+
+/// ------------------------------------
+/// Set of shaders (vertex and fragment)
+/// ------------------------------------
 
 GLuint VAO, VBO, shader, uniformModel;
 #pragma region Vertex&Fragment

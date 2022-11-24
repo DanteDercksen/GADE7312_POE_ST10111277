@@ -8,9 +8,11 @@
 #include "ChessBoard.h"
 #include "HeightMap.h"
 #include <Windows.h>
-#include "pch.h"
-
 #include "ChessPiece.h"
+#include <time.h>   
+#include <stdio.h>  
+#include <chrono>
+#include <thread>
 //STB
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
@@ -19,10 +21,6 @@
 #define RIGHT_ARROW 77
 
 using namespace std;
-using namespace DirectX;
-using namespace DirectX::SimpleMath;
-
-using Microsoft::WRL::ComPtr;
 
 static const int WIDTH = 800;
 static const int HEIGHT = 600;
@@ -32,22 +30,22 @@ Texture* texture;
 TexturedCube gObject;
 ChessBoard chessBoard;
 HeightMap heightMap;
-
 ChessPiece chessPiece;
 
-
+void run_forever();
 void input(int key, int x, int y);
 void init();
 void display();
 void timer(int);
 void updateCamera();
-int cameraPos;
 
+int cameraPos;
 bool isPressed = false;
+unsigned int iMemClock, iCurClock, iLoops;
+char aFPS[12];
 
 //Initial Calls + Window Setup
 int main(int argc, char* argv[]) {
-
 
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GL_RGB | GLUT_DOUBLE | GLUT_DEPTH);
@@ -61,17 +59,57 @@ int main(int argc, char* argv[]) {
 		glutCreateWindow("My First Window");
 	}
 
+	//run_forever();
 	chessBoard.SetRandom(); //Sets the offset for each chess tile
-
+	
 	glutDisplayFunc(display);
 	glutSpecialFunc(input);
 	glutTimerFunc(0, timer, 0);
 	init();
 	glutMainLoop();
-
+	
 	delete texture;
 
 	return 0;
+}
+
+using namespace std::chrono;
+
+steady_clock::time_point first_tp;
+unsigned long frame_count = 0;
+
+duration<double> uptime()
+{
+	if (first_tp == steady_clock::time_point{})
+		return duration<double>{ 0 };
+
+	return steady_clock::now() - first_tp;
+}
+
+double fps()
+{
+	const double uptime_sec = uptime().count();
+
+	if (uptime_sec == 0)
+		return 0;
+
+	return frame_count / uptime_sec;
+}
+
+void time_consuming_function()
+{
+	std::this_thread::sleep_for(milliseconds{ 1000 });
+}
+
+void run_forever()
+{
+	std::cout << "fps: " << fps() << '\n';
+
+	first_tp = std::chrono::steady_clock::now();
+
+		time_consuming_function();
+
+		frame_count++;
 }
 
 //Change Initial Camera View + Texture
@@ -121,7 +159,6 @@ void display() {
 	}
 
 	glutSwapBuffers();
-
 }
 
 void timer(int) {
@@ -176,6 +213,8 @@ void updateCamera() {
 		eyeX, 0, 0,
 		0, 1, 0
 	);
+
+	run_forever();
 }
 
 void input(int key, int x, int y) {

@@ -13,6 +13,8 @@
 #include <stdio.h>  
 #include <chrono>
 #include <thread>
+#include <string.h>
+#include <string>
 //STB
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
@@ -47,13 +49,8 @@ char aFPS[12];
 //Initial Calls + Window Setup
 int main(int argc, char* argv[]) {
 
-<<<<<<< Updated upstream
-=======
-	
-
->>>>>>> Stashed changes
 	glutInit(&argc, argv);
-	glutInitDisplayMode(GL_RGB | GLUT_DOUBLE | GLUT_DEPTH);
+	glutInitDisplayMode(GLUT_DOUBLE);// (GL_RGB | GLUT_DOUBLE | GLUT_DEPTH); 
 
 	//Window initialising
 	{
@@ -112,6 +109,9 @@ void threadSpeed() //how frequently fps, in milliseconds, will be recalculated
 void infiniteLoop() //infinitely looping the fps counter as long as the program is running
 {
 	std::cout << "fps: " << fps() << '\n';
+	std::string str = "fps: " + std::to_string(fps());
+	const char* c = str.c_str();
+	glutSetWindowTitle(c);
 	initialFPS = std::chrono::steady_clock::now();
 
 		threadSpeed();

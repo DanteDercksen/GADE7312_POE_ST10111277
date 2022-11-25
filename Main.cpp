@@ -47,6 +47,11 @@ char aFPS[12];
 //Initial Calls + Window Setup
 int main(int argc, char* argv[]) {
 
+<<<<<<< Updated upstream
+=======
+	
+
+>>>>>>> Stashed changes
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GL_RGB | GLUT_DOUBLE | GLUT_DEPTH);
 

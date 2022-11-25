@@ -32,7 +32,7 @@ ChessBoard chessBoard;
 HeightMap heightMap;
 ChessPiece chessPiece;
 
-void run_forever();
+void infiniteLoop();
 void input(int key, int x, int y);
 void init();
 void display();
@@ -59,7 +59,6 @@ int main(int argc, char* argv[]) {
 		glutCreateWindow("My First Window");
 	}
 
-	//run_forever();
 	chessBoard.SetRandom(); //Sets the offset for each chess tile
 	
 	glutDisplayFunc(display);
@@ -75,47 +74,52 @@ int main(int argc, char* argv[]) {
 
 using namespace std::chrono;
 
-steady_clock::time_point first_tp;
-unsigned long frame_count = 0;
+steady_clock::time_point initialFPS;
+unsigned long fpsCount = 0;
 
-duration<double> uptime()
+/// -----------
+/// FPS Counter
+/// -----------
+
+duration<double> uptime() //duration of the FPS counter running is the duration of the program being up and running
 {
-	if (first_tp == steady_clock::time_point{})
+	if (initialFPS == steady_clock::time_point{})
 		return duration<double>{ 0 };
 
-	return steady_clock::now() - first_tp;
+	return steady_clock::now() - initialFPS;
 }
 
-double fps()
+double fps() //calculating fps
 {
 	const double uptime_sec = uptime().count();
 
 	if (uptime_sec == 0)
 		return 0;
 
-	return frame_count / uptime_sec;
+	return fpsCount / uptime_sec;
 }
 
-void time_consuming_function()
+void threadSpeed() //how frequently fps, in milliseconds, will be recalculated
 {
 	std::this_thread::sleep_for(milliseconds{ 1000 });
 }
 
-void run_forever()
+void infiniteLoop() //infinitely looping the fps counter as long as the program is running
 {
 	std::cout << "fps: " << fps() << '\n';
+	initialFPS = std::chrono::steady_clock::now();
 
-	first_tp = std::chrono::steady_clock::now();
-
-		time_consuming_function();
-
-		frame_count++;
+		threadSpeed();
+		fpsCount++;
 }
+
+/// ---------------
+/// end FPS Counter
+/// ---------------
 
 //Change Initial Camera View + Texture
 void init() {
 	glEnable(GL_DEPTH_TEST);
-
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluPerspective(50.0, (double)WIDTH / (double)HEIGHT, 1.0, 1000.0);
@@ -171,7 +175,6 @@ void updateCamera() {
 	glLoadIdentity();
 	double eyeX = 0;
 
-
 	if (!isPressed)
 	{
 		if (GetKeyState(GLUT_KEY_RIGHT) & 0x8000)
@@ -214,7 +217,7 @@ void updateCamera() {
 		0, 1, 0
 	);
 
-	run_forever();
+	infiniteLoop();
 }
 
 void input(int key, int x, int y) {
@@ -222,7 +225,6 @@ void input(int key, int x, int y) {
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	double eyeX = 0;
-
 
 	if (key == (GLUT_KEY_RIGHT))
 	{
@@ -232,7 +234,6 @@ void input(int key, int x, int y) {
 	}
 	else if (key == (GLUT_KEY_LEFT))
 	{
-
 		cout << "A" << endl;
 		isPressed = true;
 		cameraPos++;
@@ -257,6 +258,4 @@ void input(int key, int x, int y) {
 		eyeX, 0, 0,
 		0, 1, 0
 	);
-
-
 }
